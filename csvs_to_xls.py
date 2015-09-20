@@ -10,18 +10,20 @@ import glob, csv, xlwt, os
 # create a workbook object
 wb = xlwt.Workbook()
 
+# setup help and version
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
-# if a glob option is chosen
 @click.group(CONTEXT_SETTINGS)
 @click.version_option(version='1.0.0')
 def combine():
     pass
 
+# helper method to print input arguments
 def glober(**kwargs):
     output = "{0} {1}".format(kwargs['glob'], kwargs['delimiter'])
     print output  
 
+# if a glob option is chosen
 @combine.command()
 @click.option('-d', '--delimiter', default=",", help="allowed delimiters are , and \t")
 @click.option('-g', '--glob', help="enter *.csv")
@@ -30,6 +32,8 @@ def xls_glob(**kwargs):
     '''
     combines all csv files in specified directory
     ''' 
+
+	# print kwargs
     glober(**kwargs)    
 
     try:
