@@ -23,9 +23,9 @@ def glober(**kwargs):
     print output  
 
 @combine.command()
-@click.option('--delimiter', default=",", help="allowed delimiters are , and \t")
-@click.option('--glob', help="enter *.csv")
-@click.option('--output', default="combined.xls", help="enter output file name")
+@click.option('-d', '--delimiter', default=",", help="allowed delimiters are , and \t")
+@click.option('-g', '--glob', help="enter *.csv")
+@click.option('-o','--output', default="combined.xls", help="enter output file name")
 def xls_glob(**kwargs):
     '''
     combines all csv files in specified directory
@@ -57,9 +57,9 @@ def xls_glob(**kwargs):
 
 ## if a list option is chosen
 @combine.command()
-@click.option('--delimiter', default=",", help="allowed delimiters are , and \t")
-@click.option('--list', help="enter *.csv")
-@click.option('--output', default="combined.xls", help="enter output file name")
+@click.option('-d','--delimiter', default=",", help="allowed delimiters are , and \t")
+@click.option('-l','--list', help="enter *.csv")
+@click.option('-o','--output', default="combined.xls", help="enter output file name")
 def xls_list(**kwargs):
     '''
     combines csv files specified in a file_list text file.
