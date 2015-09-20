@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Reference: http://stackoverflow.com/questions/5705588/python-creating-excel-workbook-and-dumping-csv-files-as-worksheets
-# Date: 2012-08-31, added argparse
+# Date: 2015-08-31, added click
 # Project: compile csv/dat files as excel worksheets into compiled.xls
 
 # imports
@@ -59,7 +59,7 @@ def xls_glob(**kwargs):
             print '[ERROR] Cannot open xls file for writing:{0}'.format(xls_f)
             sys.exit(0)
 
-## if a list option is chosen
+# if a list option is chosen
 @combine.command()
 @click.option('-d','--delimiter', default=",", help="allowed delimiters are , and \t")
 @click.option('-l','--list', help="enter *.csv")
@@ -107,5 +107,6 @@ def save_output(inputfile, delimiter):
         for colx, value in enumerate(row):
             ws.write(rowx, colx, value)
 
+# run it
 if __name__=="__main__":
     combine()
