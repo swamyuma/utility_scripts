@@ -3,6 +3,7 @@ A utility script using `click` instead of `argparse` to combine multiple csv fil
 
 ## Requirements
 Install the following module using `pip`
+- `click`
 - `xlwt`
 
 ## Usage
