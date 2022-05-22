@@ -1,4 +1,4 @@
-#csvs_to_xls
+# csvs_to_xls
 A utility script using `click` instead of `argparse` to combine multiple csv files into one excel file with each csv file as a worksheet.  I followed the example shown in this wonderful article [parsing libraries](https://realpython.com/blog/python/comparing-python-command-line-parsing-libraries-argparse-docopt-click/) .
 
 ## Requirements
